@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<ul>
+<li>{{ u.first_name }}</li>
+<li>{{ u.last_name }}</li>
+<li><img class="figure-img img-fluid rounded" src="{{u.image_url}}" alt=""></li>
+<a href="/user" class="brn btn-outline-primary">Users</a>
+<a class="btn btn-primary" href="/user/{{id}}/edit">Edit</a>
+<form action="/delete/{{id}}">
+<button class="btn btn-danger" >Delete</button>
+</form>
+<form action="/user/{{id}}/posts/new">
+<input type="hidden" value="{{id}}" name="user_id" />  
+<button class="btn btn-primary" >Add Post</button>
+</form>
+</ul>
+
+<ul>
+    {% for post in p %}
+    <li><a href="/post/{{post.post_id}}">{{post.title}}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+
+

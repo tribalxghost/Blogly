@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content%}
+<h1>{{tag.name}}</h1>
+
+<span>
+<a href="/tags" class="btn btn-outline-primary">Cancel</a>
+<a href="/tags/{{id}}/edit" class="btn btn-primary">Edit</a>
+<a href="/tags/{{id}}/deleting" class="btn btn-danger">DELETE</a>
+</span>
+{% endblock %}

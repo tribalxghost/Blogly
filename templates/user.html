@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for user in list %}
+<li>
+    <a href="user/{{user.user_id}}">{{ user.first_name }}{{ user.last_name }}</a> 
+</li>
+{% endfor %}
+
+<div>
+    <form action="/user/new" method="post">
+        
+    <button class="btn btn-primary">Add User</button>
+    <a href="/tags" class="btn btn-outline-primary">Tags</a>
+        
+    </form>
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+
+

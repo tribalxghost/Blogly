@@ -1,0 +1,19 @@
+{%extends 'base.html' %}
+{% block content %}
+<h1>{{post.title}}</h1>
+<p>{{post.content}}</p>
+<i>By {{user}}</i>
+<span>
+    <b>TAGS</b>
+    <span>
+    {% for tag in tags%}
+    <a class="btn btn-primary btn-sm" href="">{{tag.name}}</a>
+    {% endfor %}
+</span>
+</span>
+<div>
+<a href="/user/{{user_id}}" class="btn btn-outline-primary"">Cancel</a>
+<a href="/posts/{{id}}/edit" class="btn btn-primary">Edit</a>
+<a href="/posts/{{id}}/delete"class="btn btn-danger">Delete</a>
+</div>
+{% endblock %}
